@@ -14,7 +14,7 @@ export default class Goods extends Component {
     render() {
         return (
           <ScrollView>
-          <StatusBar barStyle="dark-content" />
+          <StatusBar backgroundColor='red' />
           <View style={styles.search}>
             <View style={styles.searchContent}>
               <View style={styles.searchContent1}>
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     },
     boxShop:{
       width:"49%",
-      height:310,
+      height:320,
       marginTop:10,
       backgroundColor:"#fff",
       alignItems:'center',
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
     },
     shopWord1:{
       width:'90%',
-      height:40,
+      height:50,
       color:"#a0a0a0",
       justifyContent:'space-between',
       alignItems:'center',

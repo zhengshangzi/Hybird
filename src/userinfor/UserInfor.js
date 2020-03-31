@@ -7,7 +7,8 @@ import {
     ScrollView,
     TouchableOpacity,
     AsyncStorage,
-    ToastAndroid
+    ToastAndroid,
+    StatusBar
 } from 'react-native';
 import {Icon } from '@ant-design/react-native';
 import ImagePicker from 'react-native-image-picker';
@@ -110,6 +111,8 @@ export default class UserInfor extends Component {
     render() {
         return (
             <ScrollView>
+            <StatusBar backgroundColor='red'/>
+ 
             <View style={{backgroundColor:'#eeeeee'}}>
                 <View style={styles.head}>
                     <TouchableOpacity

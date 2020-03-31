@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, TextInput,TouchableOpacity, ToastAndroid,AsyncStorage, Alert,StyleSheet} from 'react-native';
+import {View, Text, Image,ScrollView, TextInput,StatusBar,TouchableOpacity, ToastAndroid,AsyncStorage, Alert,StyleSheet} from 'react-native';
 import { Icon } from '@ant-design/react-native';
 import { Actions } from 'react-native-router-flux';
 import {myFetch} from '../utils'
@@ -64,9 +64,10 @@ export default class Login extends Component {
   render() {
     return (
       <View style={{flex: 1,justifyContent: 'center',alignItems:'center'}}>
-         <Text style={{fontSize:30}}>快速注册</Text>
-        <View
-          style={{ alignItems: 'center',borderWidth:0,borderColor:'red',width:'95%',height:'55%',justifyContent:'center'}}>
+      <StatusBar backgroundColor='red'/>
+      <View
+        style={{ alignItems: 'center',borderWidth:0,borderColor:'red',width:'95%',height:'60%',justifyContent:'center',}}>
+        <Text style={{fontSize:30,marginBottom:40}}> 快速注册</Text>
           <View
             style={{
               width: '80%',
@@ -147,8 +148,7 @@ export default class Login extends Component {
                 >
                 <Text>返回登录</Text>
             </TouchableOpacity>
-        </View>
-        <View style={styles.style_other}>
+            <View style={styles.style_other}>
             <Text style={styles.style_view_unlogin} >其他注册方式：</Text>
             <TouchableOpacity activeOpacity={0.5}>
             <Text style={styles.style_image_other}>QQ</Text>
@@ -160,6 +160,8 @@ export default class Login extends Component {
             <Text style={styles.style_image_other}>微博</Text>
             </TouchableOpacity>
         </View>
+        </View>
+       
 
       </View>
     );
@@ -178,9 +180,8 @@ const styles = StyleSheet.create({
       marginRight: 10,
   },
   style_other:{
-      bottom:30,
+      marginTop:40,
       //绝对定位
-      position:'absolute',
       //主轴的方向
       flexDirection:'row',
       //侧轴对齐方式

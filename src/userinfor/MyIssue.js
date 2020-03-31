@@ -74,7 +74,6 @@ export default class MyIssue extends Component {
             return {
                 page: state.page-1,
                 isLoad:false
-
             }
         })
         }
@@ -82,14 +81,14 @@ export default class MyIssue extends Component {
     render() {
         return (
             <View>
-                <StatusBar translucent={true} backgroundColor='transparent'/>
+                <StatusBar backgroundColor='red'/>
                 <ScrollView>
                 <View style={{height:503,marginTop:10}}>
                     { this.state.isLoad?(this.state.data.map((item)=>(
                         <View style={styles.rows}>
                             {/* <Text style={styles.title} numberOfLines={1}>{item.title}</Text> */}
                             <Text style={styles.title} numberOfLines={1}>{item.title ? (item.title.length > 15 ? item.title.substr(0, 15) + "..." : item.title) : ""}</Text>
-                            <Text style={{marginLeft:"20%"}}>{item.create_at.substring(0,10)}</Text>
+                            <Text >{item.create_at.substring(0,10)}</Text>
                             <Text style={item.replay=='已回复'?styles.style1:styles.style2}>{item.replay}</Text>
                         </View>
                     ))
@@ -100,7 +99,7 @@ export default class MyIssue extends Component {
                     <TouchableOpacity style={styles.pagebutton} onPress={()=>{this.pre()}}>
                         <Text style={{fontSize:18,color:'#fff'}}>上一页</Text>
                     </TouchableOpacity> 
-                    <Text style={{fontSize:18,marginRight:'16.5%',marginLeft:'16.5%'}}>第{this.state.page}页</Text>
+                    <Text style={{fontSize:18}}>第{this.state.page}页</Text>
                     <TouchableOpacity style={styles.pagebutton}>
                         <Text style={{fontSize:18,color:'#fff'}} onPress={()=>{this.next()}}>下一页</Text>
                     </TouchableOpacity> 
@@ -117,7 +116,7 @@ const styles=StyleSheet.create({
         height:50,
         alignItems:'center',
         flexDirection:'row',
-        justifyContent:'center',
+        justifyContent:'space-evenly',
         borderBottomColor:'#eee',
         borderBottomWidth:2,
         backgroundColor:'#fff'
@@ -125,19 +124,18 @@ const styles=StyleSheet.create({
     title:{
         alignItems:'center',
         justifyContent:'center',
-        marginLeft:'2.5%',
         color:'#000000',
-        width:"45%",
+        width:"54%",
         fontSize:14,
         overflow:'hidden',
     },
     style1:{
-        marginRight:"2.5%",
-        marginLeft:'5%'
+        // marginRight:"2.5%",
+        // marginLeft:'5%'
     },
     style2:{
-        marginRight:"2.5%",
-        marginLeft:'5%',
+        // marginRight:"2.5%",
+        // marginLeft:'5%',
         color:'red'
     },
     pagebox:{
@@ -147,7 +145,7 @@ const styles=StyleSheet.create({
         paddingBottom:10,
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'center',
+        justifyContent:'space-evenly',
         backgroundColor:"#fff"
     },
     pagebutton:{

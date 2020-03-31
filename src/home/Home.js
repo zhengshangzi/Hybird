@@ -39,7 +39,7 @@ export default class Home extends Component {
     render() {
         return (
             <ScrollView>
-                <StatusBar translucent={true} backgroundColor='transparent'/>
+                <StatusBar backgroundColor='red'/>
                 <View style={{
                         backgroundColor:'#eeeeee',
                         flex:1
@@ -89,7 +89,7 @@ export default class Home extends Component {
                                         <Image source={item.img} resizeMode="center"/>
                                     </View>
                                     <Text style={styles.title}>{item.title}</Text>
-                                    <TouchableOpacity style={{marginLeft:"43%",}}>
+                                    <TouchableOpacity >
                                         <Icon name="right" size='md' color="#a0a0a0" />
                                     </TouchableOpacity> 
                                 </View>
@@ -146,7 +146,7 @@ const styles=StyleSheet.create({
         justifyContent:'center',
         marginLeft:'6%',
         color:'#a0a0a0',
-        width:"20%",
+        width:"62%",
         fontSize:16
     },
     buttonbox:{

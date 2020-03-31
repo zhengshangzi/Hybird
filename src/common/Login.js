@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, TextInput,TouchableOpacity, AsyncStorage, Alert,StyleSheet,ActivityIndicator} from 'react-native';
+import {View, Text,StatusBar, Image, TextInput,TouchableOpacity, AsyncStorage, Alert,StyleSheet,ActivityIndicator,ScrollView} from 'react-native';
 import { Icon } from '@ant-design/react-native';
 import { Actions } from 'react-native-router-flux';
 import {myFetch} from '../utils'
@@ -61,9 +61,10 @@ export default class Login extends Component {
   render() {
     return (
       <View style={{flex: 1,justifyContent: 'center',alignItems:'center'}}>
-        <Text style={{fontSize:30}}> 欢迎登录</Text>
+        <StatusBar backgroundColor='red'/>
         <View
-          style={{ alignItems: 'center',borderWidth:0,borderColor:'red',width:'95%',height:'55%',justifyContent:'center'}}>
+          style={{ alignItems: 'center',borderWidth:0,borderColor:'red',width:'95%',height:'60%',justifyContent:'center',}}>
+          <Text style={{fontSize:30,marginBottom:40}}> 欢迎登录</Text>
           <View
             style={{
               width: '80%',
@@ -134,7 +135,7 @@ export default class Login extends Component {
         </View>
         {
           this.state.isLoading?
-          <View style={{width:'100%',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
+          <View style={{width:'100%',justifyContent:'center',alignItems:'center',flexDirection:'row',height:'10%'}}>
             <Text style={{fontSize:20}}>正在登录中</Text>
             <ActivityIndicator color="red" size='large'/>
             </View>
