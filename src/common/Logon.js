@@ -144,7 +144,8 @@ export default class Login extends Component {
                     borderRadius:20,
 
                 }}
-                onPress={()=>{Actions.login()}}
+                onPress={()=>{Actions.reset('login');
+              }}
                 >
                 <Text>返回登录</Text>
             </TouchableOpacity>

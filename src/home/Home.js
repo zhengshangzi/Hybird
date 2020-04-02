@@ -8,11 +8,13 @@ import {
     ScrollView,
     TouchableOpacity,
     StatusBar,
-    FlatList
+    FlatList,
+    Dimensions
 } from 'react-native';
 import {Icon } from '@ant-design/react-native';
 import Button from 'react-native-button';
 import Swiper from 'react-native-swiper';
+const {width}=Dimensions.get('window');
 const data=[
     {
         bgcolor:"#ffcccc",
@@ -100,7 +102,7 @@ export default class Home extends Component {
                         <Button 
                             style={{
                                 justifyContent:'center',
-                                width:400,height: 45,
+                                width:0.8*width,height: 45,
                                 borderRadius: 5,
                                 textAlignVertical: 'center',
                                 backgroundColor:'red',
@@ -146,7 +148,7 @@ const styles=StyleSheet.create({
         justifyContent:'center',
         marginLeft:'6%',
         color:'#a0a0a0',
-        width:"62%",
+        width:0.62*width,
         fontSize:16
     },
     buttonbox:{
